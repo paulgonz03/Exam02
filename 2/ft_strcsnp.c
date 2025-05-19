@@ -1,10 +1,3 @@
-
-/*
-	The strcspn() function calculates the length of the initial segment  of
-    s which consists entirely of bytes not in reject.
-
-*/
-
 #include <stdio.h>
 #include <string.h>
 

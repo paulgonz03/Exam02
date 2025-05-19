@@ -10,12 +10,12 @@ int main (int argc, char **argv)
 		while (argv[1][i])
 			i++;
 		i--;
-		while (argv[1][i] <= 32) //retrocede para quitar espacios
+		while (argv[1][i] <= 32) 
 			i--;
-		while (argv[1][i] > 32) //retrocede hasta el inicio de la ultima palabra
+		while (argv[1][i] > 32) 
 			i--;
 		i++;
-		while (argv[1][i] > 32) //Pinta la ultima palabra
+		while (argv[1][i] > 32) 
    			write(1, &argv[1][i++], 1);
 	}
 	write (1, "\n", 1);

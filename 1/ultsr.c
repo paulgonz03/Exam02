@@ -1,14 +1,3 @@
-
-/*
-	Write a program that takes a string and reverses the case of all its letters.
-	Other characters remain unchanged.
-
-	You must display the result followed by a '\n'.
-
-	If the number of arguments is not 1, the program displays '\n'.
-
-*/
-
 #include <unistd.h>
 
 int		main(int argc, char *argv[])

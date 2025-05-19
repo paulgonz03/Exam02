@@ -1,10 +1,3 @@
-
-/*
-	Write a program called alpha_mirror that takes a string and displays this string
-	after replacing each alphabetical character by the opposite alphabetical
-	character, followed by a newline.
-*/
-
 #include <unistd.h>
 
 int	main(int argc, char **argv)

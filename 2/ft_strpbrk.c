@@ -1,4 +1,3 @@
-// Reproduce exactly the behavior of the function strpbrk (man strpbrk).
 # include <stdio.h>
 # include <string.h>
 

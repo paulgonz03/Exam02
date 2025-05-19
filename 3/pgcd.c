@@ -1,15 +1,3 @@
-/*
-
-	Write a program that takes two strings representing two strictly positive
-	integers that fit in an int.
-
-	Display their highest common denominator followed by a newline (It's always a
-	strictly positive integer).
-
-	If the number of parameters is not 2, display a newline.
-
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -20,7 +8,6 @@ unsigned int gcd(unsigned int a, unsigned int b)
 	
 	while (b != 0)
 	{
-		//Calculate the remainder of a divided by b and swaps the values of a and b in each iteration until b becomes 0. At that point, a contains the HCF
 		temp = b;
 		b = a % b;
 		a = temp;

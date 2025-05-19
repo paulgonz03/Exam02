@@ -1,7 +1,3 @@
-// Reproduce exactly the behavior of the strspn function (man strspn).
-// The function should be prototyped as follows:
-// size_t	ft_strspn(const char *s, const char *accept);
-
 # include <string.h>
 
 char	*ft_strchr(const char *s, int c)
