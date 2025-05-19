@@ -34,7 +34,7 @@ int	main(void)
 		else if (number % 5 == 0)
 			write(1, "buzz", 4);
 		else
-			ft_write_number(number);
+			ft_putnbr(number);
 		write(1, "\n", 1);
 		number++;
 	}
