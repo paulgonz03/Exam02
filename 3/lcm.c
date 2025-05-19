@@ -49,7 +49,7 @@ int main(int argc, char **argv)
 	if (argc == 3)
 	{
 		unsigned int m = lcm(atoi(argv[1]), atoi(argv[2]));
-		printf("%u\n" , m);
+		printf("%u\n" , m); //quitar main
 	}
 	
 }

@@ -11,7 +11,8 @@
 	The input, when there is one, will be valid.
 */
 
-#include <stdio.h>*
+#include <stdio.h>
+#include <stdlib.h>
 
 void	fprime(int n)
 {

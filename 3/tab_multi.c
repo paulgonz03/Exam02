@@ -14,41 +14,48 @@
 
 #include <unistd.h>
 
-void	str_capitalizer(char *str)
+int		ft_atoi(char *str)
 {
-	int i = 0;
+	int n = 0;
 
-	while (str[i])
+	while (*str >= '0' && *str <= '9')
 	{
-		if (i == 0 || str[i - 1] == ' ' || str[i - 1] == '\t')
-		{
-			if (str[i] >= 'a' && str[i] <= 'z')
-				str[i] -= 32;
-		}
-		else
-		{
-			if (str[i] >= 'A' && str[i] <= 'Z')
-				str[i] += 32;
-		}
-		write(1, &str[i], 1);
-		i++;
+		n = n * 10 + *str - '0';
+		++str;
 	}
+	return (n);
 }
 
-int	main(int argc, char **argv)
+void	ft_putnbr(int n)
 {
-	int i = 1;
+	if (n >= 10)
+		ft_putnbr(n / 10);
 
-	if (argc > 1)
+	char c = (n % 10) + '0';
+	write(1, &c, 1);
+}
+
+int	main(int argc, char *argv[])
+{
+	int	i;
+	int	nbr;
+
+	if (argc != 2)
+		write(1, "\n", 1);
+	else
 	{
-		while (i < argc)
+		i = 1;
+		nbr = ft_atoi(argv[1]);
+		while (i <= 9)
 		{
-			str_capitalizer(argv[i]);
+			ft_putnbr(i);
+			write(1, " x ", 3);
+			ft_putnbr(nbr);
+			write(1, " = ", 3);
+			ft_putnbr(i * nbr);
 			write(1, "\n", 1);
 			i++;
 		}
 	}
-	else
-		write(1, "\n", 1);
-	return 0;
+	return (0);
 }
