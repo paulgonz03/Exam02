@@ -59,17 +59,17 @@ char **ft_split(char *str)
     return (out);
 }
 
-int main()
-{
-    int i = 0;
-    char str[] = "Hola Como Estas? Muy bien y vos?";
-    char **result = ft_split(str);
-    while(result[i])
-    {
-        printf("Palabra %d: %s\n", i, result[i]);
-        free(result[i]);
-        i++;
-    }
-    free(result);
-    return 0;
-}
+// int main()
+// {
+//     int i = 0;
+//     char str[] = "Hola Como Estas? Muy bien y vos?";
+//     char **result = ft_split(str);
+//     while(result[i])
+//     {
+//         printf("Palabra %d: %s\n", i, result[i]);
+//         free(result[i]);
+//         i++;
+//     }
+//     free(result);
+//     return 0;
+// }

@@ -15,21 +15,22 @@
 
 int *ft_range(int start, int end)
 {
+    int i = 0;
     int len;
     int *result;
-    int i = 0;
-    if (start <= end)
-		len = end - start + 1;
-	else
-		len = start - end + 1;
-    result = (int *)malloc(sizeof(int) * len);
-    if (!result)
-        return NULL;
-    while (i < len)
+    if(start <= end)
+        len = (end - start) + 1;
+    else
+        len = (start - end) + 1;
+    if(!(result = (int *)malloc(sizeof(int) * len)))
+        return(NULL);
+    while(i < len)
     {
-        result[i] = start;
-        start++;
-        i++;
+        result[i++] = start;
+        if(start < end)
+            start++;
+        else
+            start--;
     }
-    return result;
+    return(result);
 }
