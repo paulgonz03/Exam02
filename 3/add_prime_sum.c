@@ -1,81 +1,52 @@
 #include <unistd.h>
-
-int is_prime(int nb)
+#include <stdlib.h>
+#include <unistd.h>
+int	ft_atoi(const char *str)
 {
-    int i;
-
-    i = 2;
-    if (nb <= 1)
-        return (0);
-    while (i <= (nb / 2))
-    {
-        if (!(nb % i))
-            return (0);
-        else
-            i += 1;
-    }
-    return (1);
+    int sign = 1; 
+    int result = 0;
+    while (*str == ' ' || (*str >= 9 && *str <= 13))
+        	str++;
+	if (*str == '-')
+		sign = -1;
+	if (*str == '-' || *str == '+')
+		str++;
+    while(*str >= '0' && *str <= '9')
+        result = result * 10 + *str++ - '0'; 
+    return (result *sign); 
+}
+void ft_putnbr(int num)
+{
+        if(num > 9)
+                ft_putnbr(num / 10);
+        write(1, &(char){num % 10 + '0'}, 1);
 }
 
-void ft_putnbr(int nb)
+int	main(int argc, char *argv[])
 {
-    char c;
-
-    if (nb < 0)
+    int sum = 0;
+    if(argc == 2)
     {
-        nb = -nb;
-        write(1, "-", 1);
+	    int n = ft_atoi(argv[1]);
+        int sum = 0;
+        for (int i = 2; i <= n; ++i)
+        {
+            int is_prime = 1;
+            for (int j = 2; j * j <= i; ++j)
+            {
+                if (i % j == 0)
+                {
+                    is_prime = 0;
+                    break;
+                }
+            }
+            if (is_prime)
+                sum += i;
+        }
+        ft_putnbr(sum);
     }
-    if (nb < 10)
-    {
-        c = nb + '0';
-        write(1, &c, 1);
-    }
-    else
-    {
-        ft_putnbr(nb / 10);
-        ft_putnbr(nb % 10);
-    }
-}
-
-
-int ft_atoi(char  *str)
-{
-	int i = 0;
-	int sign = 1;
-	int nbr = 0;
-
-	if (!str[i])
-		return(0);
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\f' \
-            || str[i] == '\v' || str[i] == '\r' || str[i] == '\t')
-			i++;
-	if (str[i] == '-' || str[i] == '+')
-        if (str[i++] == '-')
-            sign = -1;
-	while (str[i] >= '0' && str[i] <= '9')
-        nbr = (nbr * 10) + (str[i++] - '0');
-	return (nbr * sign);	
-}
-
-
-int main (int argc, char **argv)
-{
-	int nb;
-	int sum = 0;
-
-	if (argc = 2)
-	{
-		nb = ft_atoi(argv[1]);
-		while (nb > 0)
-		{
-			if (is_prime(nb))
-			{
-				sum += (nb + 1);
-				nb--;
-			}
-		ft_putnbr(sum);
-		}
-	}
-	write(1, "\n", 1);
+    if (argc != 2)
+        ft_putnbr(0); 
+    write(1, "\n", 1);
+    return 0;
 }
