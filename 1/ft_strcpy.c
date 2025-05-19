@@ -1,0 +1,15 @@
+
+/*
+	Reproduce the behavior of the function strcpy (man strcpy).
+*/
+
+char *ft_strcpy(char *s1, char *s2)
+{
+	int i = 0;
+	while (s2[i])
+	{
+		s1[i] = s2[i];
+		i++;
+	}
+	return(s2);
+}
